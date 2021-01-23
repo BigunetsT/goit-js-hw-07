@@ -23,12 +23,14 @@ const divBoxRef = document.querySelector('#boxes');
 let amount;
 const createBoxes = amount => {
   const firstBoxSize = 20;
+  let arrBoxes = [];
   for (let i = 1; i <= amount; i += 1) {
     const div = document.createElement('div');
     const boxSize = firstBoxSize + i * 10;
     div.style.cssText = `width: ${boxSize}px; height: ${boxSize}px; background-color: rgba( ${random()} , ${random()} , ${random()} ); margin-bottom: 20px`;
-    divBoxRef.appendChild(div);
+    arrBoxes.push(div);
   }
+  divBoxRef.append(...arrBoxes);
 };
 const getAmount = () => {
   const amount = inputRef.value;
@@ -36,6 +38,7 @@ const getAmount = () => {
 };
 const destroyBoxes = () => {
   divBoxRef.innerHTML = '';
+  inputRef.value = '';
 };
 const random = () => {
   return Math.floor(Math.random() * 256);

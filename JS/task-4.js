@@ -5,7 +5,7 @@
 //Добавь слушатели кликов на кнопки, вызовы функций и обновление интерфейса
 
 const spanValueRef = document.querySelector('#value');
-let counterValue = spanValueRef.textContent;
+let counterValue = Number(spanValueRef.textContent);
 const incrementBtnRef = document.querySelector(
   '#counter button[data-action="increment"]',
 );
@@ -14,11 +14,11 @@ const decrementBtnRef = document.querySelector(
 );
 
 const increment = () => {
-  counterValue = Number(spanValueRef.textContent) + 1;
+  counterValue += 1;
   updating();
 };
 const decrement = () => {
-  counterValue = Number(spanValueRef.textContent) - 1;
+  counterValue -= 1;
   updating();
 };
 const updating = () => {

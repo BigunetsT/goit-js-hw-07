@@ -13,8 +13,9 @@ const ingredients = [
 
 const ingredientsRef = document.querySelector('#ingredients');
 
-ingredients.forEach(ingredient => {
-  const ingredientNamesRef = document.createElement('li');
-  ingredientNamesRef.textContent = ingredient;
-  ingredientsRef.appendChild(ingredientNamesRef);
+const ingredientsLiRef = ingredients.map(ingredient => {
+  const ingredientLiRef = document.createElement('li');
+  ingredientLiRef.textContent = ingredient;
+  return ingredientLiRef;
 });
+ingredientsRef.append(...ingredientsLiRef);

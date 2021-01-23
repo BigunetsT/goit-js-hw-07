@@ -5,10 +5,12 @@ const inputRef = document.querySelector('#name-input');
 const spunRef = document.querySelector('#name-output');
 
 const onInput = event => {
-  if (event.currentTarget.value != '') {
-    return (spunRef.textContent = event.currentTarget.value);
+  const { value } = event.target;
+  if (!value) {
+    spunRef.textContent = 'незнакомец';
+  } else {
+    spunRef.textContent = value;
   }
-  return (spunRef.textContent = 'незнакомец');
 };
 
 inputRef.addEventListener('input', onInput);

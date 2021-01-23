@@ -1,9 +1,11 @@
 .gallery {
   display: flex;
+  align-items: center;
+  list-style: none;
 }
 .gallery__img {
   width: 200px;
-  height: 200px;
+  height: auto;
   margin-right: 10px;
 }
 #validation-input {
